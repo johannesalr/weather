@@ -1,0 +1,38 @@
+html, body {margin: 0; height: 100%; overflow: hidden}
+
+h3{
+  text-align: center;
+}
+
+/* main div with #map and #weather-menu settings */
+.main {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  border-spacing: 10px;
+}
+#map,#weather-menu {
+  display: table-cell;
+  
+}
+
+/* map settings */
+#map {
+    height: 800px;
+    width: 65%;
+    border: 2px solid black;
+  }
+/* weather menu settings */
+  div#weather-menu{
+    border: 2px solid black;
+    height: 800px;
+    border-radius: 5px;
+    width: 25%;
+    
+  }
+
+
+  /* weather-menu config */
+  h2#city{
+    text-align: center;
+  }
