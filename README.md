@@ -1,2 +1,2 @@
-#interative weather map
+#weather map
  
