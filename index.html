@@ -3,61 +3,42 @@
 <head>
   <title>Weather Map</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
-  integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
-  crossorigin=""/>
-
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
   <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-  integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
-  crossorigin=""></script>
-
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-
   <link rel="stylesheet" href="style.css">
-
-
-  <script src="/weather/main.js"></script>
-  
+  <script src="/main.js"></script>
 </head>
 <body>
   <!-- Container for the map -->
   <h3>Weather Map</h3>
-  
-<div class="main">
 
-  <div id="map" class="map"></div>
+  <div class="main">
+    <div id="map" class="map"></div>
+    <div id="weather-menu">
+      <h2 id="city">City</h2>
+      <p id="lat">Lat: </p>
+      <p id="lng">Long: </p>
+      <!-- Popup script!-->
+      <script>
+        //MAP
+        var map = L.map('map', {
+          center: [48.7, 11.5],
+          zoom: 6,
+          zoomControl: false,
+        });
 
-      <div id="weather-menu">
-        <h2 id="city">City</h2>
-        <p id="lat">Lat: </p>
-        <p id="lng">Long: </p>
+        //BASEMAPS
+        var osm = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',
+          {
+            attribution: '&copy; <a href="http://osm.org/copyright" target = "_blank">OpenStreetMap</a> contributors'
+          }).addTo(map);
 
-        
-<!-- Popup script!-->
-<script>
- //MAP
- var map = L.map('map', {
-    center: [48.7, 11.5],
-    zoom: 6,
-    zoomControl: false,
-});
-
-//BASEMAPS
-var osm = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',
-{
-    attribution: '&copy; <a href="http://osm.org/copyright" target = "_blank">OpenStreetMap</a> contributors'
-}).addTo(map);
-
-    //popup & weather-menu info function
-    map.on('click', onMapClick);
-  
-  
-  </script>
-  
-
-
-
+        //popup & weather-menu info function
+        map.on('click', onMapClick);
+      </script>
+    </div>
   </div>
-  </div>
-
 </body>
 </html>
