@@ -11,9 +11,27 @@
   <script src="/main.js"></script>
 </head>
 <body>
-  <!-- Container for the map -->
-  <h3>Weather Map</h3>
-
+  <header>
+    <h3>Weather Map</h3>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li>
+          <a id="cont" href="#">Continents</a>
+          <ul>
+            <li id="NA"><a href="#">North America</a></li>
+            <li id="SA"><a href="#">South America</a></li>
+            <li id="EU"><a href="#">Europe</a></li>
+            <li id="AS"><a href="#">Asia</a></li>
+            <li id="AF"><a href="#">Africa</a></li>
+            <li id="ME"><a href="#">Middle East</a></li>
+            <li id="OC"><a href="#">Oceania</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
   <div class="main">
     <div id="map" class="map"></div>
     <div id="weather-menu">
